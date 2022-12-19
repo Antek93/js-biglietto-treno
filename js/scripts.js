@@ -13,10 +13,10 @@
 
 // ________________________________________
 
-const distance = prompt('Quanti km devi percorrere?');
-console.log('Distanza da percorrere:', distance);
+const distance = parseInt(prompt('Quanti km devi percorrere?'));
+console.log('Distanza da percorrere:', distance + "km");
 
-const yearOfBirth = prompt('Inserisci anno di nascita');
+const yearOfBirth = parseInt(prompt('Inserisci anno di nascita'));
 console.log("Anno di nascità dell'utente", yearOfBirth);
 
 const now = new Date ();
@@ -26,14 +26,14 @@ console.log("Età dell'utente", age);
 let ticket_unit = 0.21;
 let ticket_fair = (distance * ticket_unit);
 
-if (age > 18 && age < 65) {
-    console.log("Costo biglietto standard:", ticket_fair);
+if (age >= 18 && age <= 65) {
+    console.log("Costo biglietto standard:", ((ticket_fair * 100) / 100) .toFixed(2) + "€");
 
 } else if (age < 18) {
     let ticket_fair = (distance * ticket_unit) - ((distance * ticket_unit) * 20 / 100 );
-    console.log("Costo biglietto sconto minorenni:", ((ticket_fair * 100) / 100) .toFixed(2));
+    console.log("Costo biglietto sconto minorenni:", ((ticket_fair * 100) / 100) .toFixed(2) + "€");
 
-} else (age > 65) {
+} else {
     let ticket_fair = (distance * ticket_unit) - ((distance * ticket_unit) * 40 / 100 );
-    console.log("Costo biglietto sconto anziani:", ((ticket_fair * 100) / 100) .toFixed(2));
+    console.log("Costo biglietto sconto anziani:", ((ticket_fair * 100) / 100) .toFixed(2) + "€");
 }
