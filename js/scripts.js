@@ -33,7 +33,7 @@ if (age >= 18 && age <= 65) {
     let ticket_fair = (distance * ticket_unit) - ((distance * ticket_unit) * 20 / 100 );
     console.log("Costo biglietto sconto minorenni:", ((ticket_fair * 100) / 100) .toFixed(2) + "€");
 
-} else {
-    let ticket_fair = (distance * ticket_unit) - ((distance * ticket_unit) * 40 / 100 );
+} else if (age >= 30 && age <= 34){
+    let ticket_fair = (distance * ticket_unit) - ((distance * ticket_unit) * 100 / 100 );
     console.log("Costo biglietto sconto anziani:", ((ticket_fair * 100) / 100) .toFixed(2) + "€");
 }
